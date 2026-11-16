@@ -8,10 +8,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "c8 --reporter=lcov mocha"
   },
   "author": {
-        "name": "Oskari Ohjelmoija ja Atte Sakari"
+    "name": "Oskari Ohjelmoija ja Atte Sakari"
   },
   "license": "ISC",
   "devDependencies": {
