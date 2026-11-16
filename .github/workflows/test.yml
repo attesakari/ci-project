@@ -28,4 +28,9 @@ jobs:
       run: npm ci
 
     - name: Unit Tests
-      run: npm test
+      run: |
+        npm test
+        make test-coverage
+
+    - name: Send results to Coveralls
+      uses: coverallsapp/github-action@v2
