@@ -12,14 +12,14 @@ describe("isEmpty.js test (tests made by students)", () => {
             expect(isEmpty()).to.equal(true)
         })
 
-        it("Parameter is empty list", ()=>
+        it("Parameter is empty set", ()=>
         {
-            expect(isEmpty([])).to.equal(true)
+            expect(isEmpty(new Set())).to.equal(true)
         })
 
         it("Parameter is empty map", ()=>
         {
-            expect(isEmpty({})).to.equal(true)
+            expect(isEmpty(new Map())).to.equal(true)
         })
 
         it("Parameter is empty string", ()=>
@@ -27,7 +27,7 @@ describe("isEmpty.js test (tests made by students)", () => {
             expect(isEmpty("")).to.equal(true)
         })
 
-        it("Parameter is integer (not a string, map or a list)", ()=>
+        it("Parameter is integer (not a string, map or a set)", ()=>
         {
             expect(isEmpty(67)).to.equal(true)
         })
@@ -48,6 +48,17 @@ describe("isEmpty.js test (tests made by students)", () => {
 
 
     describe("\n    These should return false, when parameter isn't empty:", () => {
+        
+        it("Testing with set", ()=>
+        {
+            expect(isEmpty(new Set("Test"))).to.equal(false)
+        })
+
+        it("Testing with map", ()=>
+        {
+            expect(isEmpty(new Map([["key", "value"]]))).to.equal(false)
+        })
+        
         it("Testing with string", ()=>
         {
             expect(isEmpty("Test")).to.equal(false)
